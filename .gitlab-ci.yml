@@ -33,7 +33,7 @@ before_script:
 AnsibleRoleCheck:
   script:
     # Basic role syntax check
-    - ansible-playbook tests/gitlab-ci.yml --syntax-check
+    - ansible-playbook tests/gitlab-ci.yml -i inventory --syntax-check
 
     # Deploy lxdock project and run the role/playbook
     - lxdock up
