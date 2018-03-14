@@ -4,11 +4,15 @@
 
 
 
-AnsibleRoleCheck:
+
+
+
+
+Ubuntu1604:
   variables:
     distro: ubuntu1604
     playbook: test.yml
-    container_id: '$(date +%s)'
+    container_id: 'Runner-$CI_RUNNER_ID-Project-$CI_PROJECT_ID-Pipeline-$CI_PIPELINE_ID-Job-$CI_JOB_ID'
 
   script:
 
