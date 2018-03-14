@@ -1,7 +1,7 @@
 ---
 
 
-images: "ubuntu:latest"
+images: ubuntu:latest
 
 # variables:
 #   init: "/lib/systemd/systemd"
