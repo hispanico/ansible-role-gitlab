@@ -7,7 +7,7 @@ Ubuntu1604:
   variables:
     distro: ubuntu1604
     playbook: test.yml
-    container_id: '$CI_ENVIRONMENT_NAME-Project-$CI_PROJECT_ID-Pipeline-$CI_PIPELINE_ID-Job-$CI_JOB_ID'
+    container_id: '$distro-Project-$CI_PROJECT_NAME-Pipeline-$CI_PIPELINE_ID-Job-$CI_JOB_ID'
 
   script:
 
@@ -32,7 +32,7 @@ CentOs7:
   variables:
     distro: centos7
     playbook: test.yml
-    container_id: '$CI_ENVIRONMENT_NAME-Project-$CI_PROJECT_ID-Pipeline-$CI_PIPELINE_ID-Job-$CI_JOB_ID'
+    container_id: '$distro-Project-$CI_PROJECT_NAME-Pipeline-$CI_PIPELINE_ID-Job-$CI_JOB_ID'
 
   script:
 
@@ -57,7 +57,7 @@ Ubuntu1404:
   variables:
     distro: ubuntu1404
     playbook: test.yml
-    container_id: '$CI_ENVIRONMENT_NAME-Project-$CI_PROJECT_ID-Pipeline-$CI_PIPELINE_ID-Job-$CI_JOB_ID'
+    container_id: '$distro-Project-$CI_PROJECT_NAME-Pipeline-$CI_PIPELINE_ID-Job-$CI_JOB_ID'
 
   script:
 
@@ -82,7 +82,7 @@ Debian9:
   variables:
     distro: debian9
     playbook: test.yml
-    container_id: '$CI_ENVIRONMENT_NAME-Project-$CI_PROJECT_ID-Pipeline-$CI_PIPELINE_ID-Job-$CI_JOB_ID'
+    container_id: '$distro-Project-$CI_PROJECT_NAME-Pipeline-$CI_PIPELINE_ID-Job-$CI_JOB_ID'
 
   script:
 
@@ -107,7 +107,7 @@ CentOs7_GitlabVersion:
   variables:
     distro: centos7
     playbook: test-version.yml
-    container_id: '$CI_ENVIRONMENT_NAME-Project-$CI_PROJECT_ID-Pipeline-$CI_PIPELINE_ID-Job-$CI_JOB_ID'
+    container_id: '$distro-Project-$CI_PROJECT_NAME-Pipeline-$CI_PIPELINE_ID-Job-$CI_JOB_ID'
 
   script:
 
@@ -132,7 +132,7 @@ Ubuntu1604_GitlabVersion:
   variables:
     distro: ubuntu1604
     playbook: test-version.yml
-    container_id: '$CI_ENVIRONMENT_NAME-Project-$CI_PROJECT_ID-Pipeline-$CI_PIPELINE_ID-Job-$CI_JOB_ID'
+    container_id: '$distro-Project-$CI_PROJECT_NAME-Pipeline-$CI_PIPELINE_ID-Job-$CI_JOB_ID'
 
   script:
 
