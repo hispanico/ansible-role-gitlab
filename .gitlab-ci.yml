@@ -30,7 +30,7 @@ AnsibleRoleCheck:
       || (echo 'Status code 200 test: fail' && exit 1)
   
   after_script:
-    docker rm -f $container_id
+    - docker rm -f $container_id
 
 
   
