@@ -8,7 +8,7 @@ AnsibleRoleCheck:
   variables:
     distro: ubuntu1604
     playbook: test.yml
-    container_id: '$(date +%s)''
+    container_id: '$(date +%s)'
 
   script:
 
