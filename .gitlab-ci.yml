@@ -1,6 +1,6 @@
 ---
 
-tags: docker
+
 
 image: geerlingguy/docker-ubuntu1604-ansible:latest
 
@@ -12,6 +12,7 @@ image: geerlingguy/docker-ubuntu1604-ansible:latest
 
 
 AnsibleRoleCheck:
+  tags: docker
   script:
     - hostname
     
