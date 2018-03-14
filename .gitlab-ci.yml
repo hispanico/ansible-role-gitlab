@@ -2,7 +2,7 @@
 
 image:
   name: geerlingguy/docker-ubuntu1604-ansible:latest
-  entrypoint: ["/lib/systemd/systemd", "-c"]
+  entrypoint: ["/lib/systemd/systemd", ""]
   
 testing:
     tags:
