@@ -1,4 +1,5 @@
 ---
+
 variables:
   cleanup: 'false'
   container_id: 'Runner-$CI_RUNNER_ID-Project-$CI_PROJECT_ID-Pipeline-$CI_PIPELINE_ID-Job-$CI_JOB_ID'
@@ -27,7 +28,7 @@ Ubuntu1604:
   after_script:
     - docker rm -f $container_id
 
-CentOs7:
+CentOS7:
   variables:
     distro: centos7
     playbook: test.yml
@@ -51,5 +52,101 @@ CentOs7:
   after_script:
     - docker rm -f $container_id
 
+Ubuntu1404:
+  variables:
+    distro: ubuntu1404
+    playbook: test.yml
 
+  script:
+
+    # Download test shim.
+    - wget -O ${PWD}/tests/test.sh https://gist.githubusercontent.com/geerlingguy/73ef1e5ee45d8694570f334be385e181/raw/
+    - chmod +x ${PWD}/tests/test.sh
+
+    # Run tests.
+    - ${PWD}/tests/test.sh
+
+    # Make sure GitLab is running.
+    - >
+      docker exec ${container_id} curl --insecure -s --head https://localhost/users/password/new
+      | sed -n '1p' | grep -q '200'
+      && (echo 'Status code 200 test: pass' && exit 0)
+      || (echo 'Status code 200 test: fail' && exit 1)
+  
+  after_script:
+    - docker rm -f $container_id
+
+Debian9:
+  variables:
+    distro: debian9
+    playbook: test.yml
+
+  script:
+
+    # Download test shim.
+    - wget -O ${PWD}/tests/test.sh https://gist.githubusercontent.com/geerlingguy/73ef1e5ee45d8694570f334be385e181/raw/
+    - chmod +x ${PWD}/tests/test.sh
+
+    # Run tests.
+    - ${PWD}/tests/test.sh
+
+    # Make sure GitLab is running.
+    - >
+      docker exec ${container_id} curl --insecure -s --head https://localhost/users/password/new
+      | sed -n '1p' | grep -q '200'
+      && (echo 'Status code 200 test: pass' && exit 0)
+      || (echo 'Status code 200 test: fail' && exit 1)
+  
+  after_script:
+    - docker rm -f $container_id
+
+CentOs7:
+  stage: GitlabVersion
+  variables:
+    distro: centos7
+    playbook: test-version.yml
+
+  script:
+
+    # Download test shim.
+    - wget -O ${PWD}/tests/test.sh https://gist.githubusercontent.com/geerlingguy/73ef1e5ee45d8694570f334be385e181/raw/
+    - chmod +x ${PWD}/tests/test.sh
+
+    # Run tests.
+    - ${PWD}/tests/test.sh
+
+    # Make sure GitLab is running.
+    - >
+      docker exec ${container_id} curl --insecure -s --head https://localhost/users/password/new
+      | sed -n '1p' | grep -q '200'
+      && (echo 'Status code 200 test: pass' && exit 0)
+      || (echo 'Status code 200 test: fail' && exit 1)
+  
+  after_script:
+    - docker rm -f $container_id
+
+Ubuntu1604:
+  stage: GitlabVersion
+  variables:
+    distro: ubuntu1604
+    playbook: test-version.yml
+
+  script:
+
+    # Download test shim.
+    - wget -O ${PWD}/tests/test.sh https://gist.githubusercontent.com/geerlingguy/73ef1e5ee45d8694570f334be385e181/raw/
+    - chmod +x ${PWD}/tests/test.sh
+
+    # Run tests.
+    - ${PWD}/tests/test.sh
+
+    # Make sure GitLab is running.
+    - >
+      docker exec ${container_id} curl --insecure -s --head https://localhost/users/password/new
+      | sed -n '1p' | grep -q '200'
+      && (echo 'Status code 200 test: pass' && exit 0)
+      || (echo 'Status code 200 test: fail' && exit 1)
+  
+  after_script:
+    - docker rm -f $container_id
   
