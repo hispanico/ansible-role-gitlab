@@ -1,7 +1,7 @@
 ---
 
 
-images: "geerlingguy/docker-ubuntu1604-ansible:latest"
+images: 'geerlingguy/docker-ubuntu1604-ansible':latest
 
 variables:
   init: "/lib/systemd/systemd"
