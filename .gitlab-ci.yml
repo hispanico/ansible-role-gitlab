@@ -6,6 +6,6 @@ image:
   
 testing:
     tags:
-      - doker
+      - docker
     script:
       - ls -l $CI_PROJECT_DIR
