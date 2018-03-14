@@ -8,4 +8,4 @@ testing:
     tags:
       - docker
     script:
-      - ls -l $CI_PROJECT_DIR
+      - env
