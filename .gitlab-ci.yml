@@ -2,13 +2,12 @@
 
 image:
   name: geerlingguy/docker-ubuntu1604-ansible:latest
-  entrypoint: [""]
+  entrypoint: ["/lib/systemd/systemd"]
   
 testing:
     tags:
       - docker
-      
-    entrypoint: ["/lib/systemd/systemd"]
+
     script:
       - ls -l $CI_PROJECT_DI
       - systemctl status
