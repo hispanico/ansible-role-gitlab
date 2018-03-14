@@ -2,18 +2,18 @@
 
 
 
-variables:
-  distro: ubuntu1604
-  playbook: test.yml
+
  
 
 
 
 AnsibleRoleCheck:
+  variables:
+    distro: ubuntu1604
+    playbook: test.yml
+    container_id: $(date +%s)
+
   script:
-    # Configure test script so we can run extra tests after playbook is run.
-    - export container_id=$(date +%s)
-    - export cleanup=false
 
     # Download test shim.
     - wget -O ${PWD}/tests/test.sh https://gist.githubusercontent.com/geerlingguy/73ef1e5ee45d8694570f334be385e181/raw/
@@ -28,7 +28,9 @@ AnsibleRoleCheck:
       | sed -n '1p' | grep -q '200'
       && (echo 'Status code 200 test: pass' && exit 0)
       || (echo 'Status code 200 test: fail' && exit 1)
-    
+  
+  after_script:
+    docker rm -f $container_id
 
 
   
