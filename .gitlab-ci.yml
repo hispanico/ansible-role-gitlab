@@ -1,6 +1,6 @@
 ---
 variables:
-  cleanup: false
+  cleanup: 'false'
   container_id: 'Runner-$CI_RUNNER_ID-Project-$CI_PROJECT_ID-Pipeline-$CI_PIPELINE_ID-Job-$CI_JOB_ID'
 
 Ubuntu1604:
