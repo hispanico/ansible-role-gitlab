@@ -5,6 +5,10 @@ variables:
   container_id: '$CI_JOB_NAME-$CI_PROJECT_NAME-Pipeline$CI_PIPELINE_ID-Job$CI_JOB_ID'
 
 Ubuntu1604:
+  tags:
+   - ninux
+   - shell
+   
   variables:
     distro: ubuntu1604
     playbook: test.yml
@@ -29,6 +33,10 @@ Ubuntu1604:
     - docker rm -f $container_id
 
 CentOs7:
+  tags:
+   - ninux
+   - shell
+   
   variables:
     distro: centos7
     playbook: test.yml
@@ -53,6 +61,10 @@ CentOs7:
     - docker rm -f $container_id
 
 Ubuntu1404:
+  tags:
+   - ninux
+   - shell
+   
   variables:
     distro: ubuntu1404
     playbook: test.yml
@@ -77,6 +89,10 @@ Ubuntu1404:
     - docker rm -f $container_id
 
 Debian9:
+  tags:
+   - ninux
+   - shell
+   
   variables:
     distro: debian9
     playbook: test.yml
@@ -101,6 +117,10 @@ Debian9:
     - docker rm -f $container_id
 
 CentOs7_GitlabVersion:
+  tags:
+   - ninux
+   - shell
+   
   variables:
     distro: centos7
     playbook: test-version.yml
@@ -125,6 +145,10 @@ CentOs7_GitlabVersion:
     - docker rm -f $container_id
 
 Ubuntu1604_GitlabVersion:
+  tags:
+   - ninux
+   - shell
+   
   variables:
     distro: ubuntu1604
     playbook: test-version.yml
