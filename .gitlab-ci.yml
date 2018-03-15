@@ -6,8 +6,7 @@ variables:
 
 Ubuntu1604:
   tags:
-   - ninux
-   - shell
+   - docker
    
   variables:
     distro: ubuntu1604
@@ -34,8 +33,7 @@ Ubuntu1604:
 
 CentOs7:
   tags:
-   - ninux
-   - shell
+   - docker
    
   variables:
     distro: centos7
@@ -62,8 +60,7 @@ CentOs7:
 
 Ubuntu1404:
   tags:
-   - ninux
-   - shell
+   - docker
    
   variables:
     distro: ubuntu1404
@@ -90,8 +87,7 @@ Ubuntu1404:
 
 Debian9:
   tags:
-   - ninux
-   - shell
+   - docker
    
   variables:
     distro: debian9
@@ -118,8 +114,7 @@ Debian9:
 
 CentOs7_GitlabVersion:
   tags:
-   - ninux
-   - shell
+   - docker
    
   variables:
     distro: centos7
@@ -146,8 +141,7 @@ CentOs7_GitlabVersion:
 
 Ubuntu1604_GitlabVersion:
   tags:
-   - ninux
-   - shell
+   - docker
    
   variables:
     distro: ubuntu1604
