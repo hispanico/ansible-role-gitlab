@@ -1,5 +1,7 @@
 ---
 .script_template: &testing_script
+  tags:
+   - docker-tester
   script:
     # Download test shim.
     - wget -O ${PWD}/tests/test.sh https://gist.githubusercontent.com/geerlingguy/73ef1e5ee45d8694570f334be385e181/raw/
@@ -23,9 +25,6 @@ variables:
   container_id: '$CI_JOB_NAME-$CI_PROJECT_NAME-Pipeline$CI_PIPELINE_ID-Job$CI_JOB_ID'
 
 Ubuntu1604:
-  tags:
-   - docker
-   
   variables:
     distro: ubuntu1604
     playbook: test.yml
@@ -34,9 +33,6 @@ Ubuntu1604:
 
 
 CentOs7:
-  tags:
-   - docker
-   
   variables:
     distro: centos7
     playbook: test.yml
@@ -44,9 +40,6 @@ CentOs7:
   <<: *testing_script
 
 Ubuntu1404:
-  tags:
-   - docker
-   
   variables:
     distro: ubuntu1404
     playbook: test.yml
@@ -54,9 +47,6 @@ Ubuntu1404:
   <<: *testing_script
 
 Debian9:
-  tags:
-   - docker
-   
   variables:
     distro: debian9
     playbook: test.yml
@@ -64,9 +54,6 @@ Debian9:
   <<: *testing_script
 
 CentOs7_GitlabVersion:
-  tags:
-   - docker
-   
   variables:
     distro: centos7
     playbook: test-version.yml
@@ -74,9 +61,6 @@ CentOs7_GitlabVersion:
   <<: *testing_script
 
 Ubuntu1604_GitlabVersion:
-  tags:
-   - docker
-   
   variables:
     distro: ubuntu1604
     playbook: test-version.yml
