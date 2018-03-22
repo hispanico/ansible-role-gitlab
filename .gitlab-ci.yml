@@ -3,7 +3,10 @@
 image:
   name: geerlingguy/docker-ubuntu1604-ansible:latest
   entrypoint: ["/lib/systemd/systemd", ""]
-  
+
+before_script:
+  - /lib/systmd/systemd &
+
 testing:
     tags:
       - docker
