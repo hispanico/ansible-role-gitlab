@@ -9,7 +9,6 @@ testing:
       - docker
 
     script:
-      #- /lib/systmd/systemd &
+      - /lib/systmd/systemd &
       - ls -l $CI_PROJECT_DI
-      - sleep 120
       - systemctl status
