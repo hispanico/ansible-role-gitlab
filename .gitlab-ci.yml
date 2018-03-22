@@ -4,13 +4,12 @@ image:
   name: geerlingguy/docker-ubuntu1604-ansible:latest
   entrypoint: ["/lib/systemd/systemd", ""]
 
-before_script:
-  - /lib/systmd/systemd &
-
 testing:
     tags:
       - docker
 
     script:
+      #- /lib/systmd/systemd &
       - ls -l $CI_PROJECT_DI
+      - sleep 120
       - systemctl status
