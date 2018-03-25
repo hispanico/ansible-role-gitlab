@@ -4,7 +4,7 @@
    - docker-tester
   script:
     # Download test shim.
-    - wget -O ${PWD}/tests/test.sh https://gist.githubusercontent.com/geerlingguy/73ef1e5ee45d8694570f334be385e181/raw/
+    - wget -O ${PWD}/tests/test.sh https://gitlab.ninux.org/snippets/10/raw
     - chmod +x ${PWD}/tests/test.sh
 
     # Run tests.
@@ -39,14 +39,14 @@ CentOs7:
 
   <<: *testing_script
 
-Ubuntu1404:
+.Ubuntu1404:
   variables:
     distro: ubuntu1404
     playbook: test.yml
 
   <<: *testing_script
 
-Debian9:
+.Debian9:
   variables:
     distro: debian9
     playbook: test.yml
