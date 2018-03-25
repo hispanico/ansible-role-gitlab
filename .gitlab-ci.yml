@@ -1,4 +1,5 @@
 ---
+
 .script_template: &testing_script
   tags:
    - docker-tester
@@ -23,6 +24,9 @@
 variables:
   cleanup: 'false'
   container_id: '$CI_JOB_NAME-$CI_PROJECT_NAME-Pipeline$CI_PIPELINE_ID-Job$CI_JOB_ID'
+
+before_script:
+  - docker login -u gitlab-ci-token -p $CI_JOB_TOKEN $CI_REGISTRY
 
 Ubuntu1604:
   variables:
