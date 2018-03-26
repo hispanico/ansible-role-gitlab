@@ -43,7 +43,7 @@ CentOs7:
 
   <<: *testing_script
 
-.Ubuntu1404:
+Ubuntu1404:
   variables:
     distro: ubuntu1404
     playbook: test.yml
