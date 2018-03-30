@@ -17,10 +17,10 @@
       | sed -n '1p' | grep -q '200'
       && (echo 'Status code 200 test: pass' && exit 0)
       || (echo 'Status code 200 test: fail' && exit 1)
-      
+
   after_script:
     - docker rm -f $container_id
-    
+
 variables:
   cleanup: 'false'
   container_id: '$CI_JOB_NAME-$CI_PROJECT_NAME-Pipeline$CI_PIPELINE_ID-Job$CI_JOB_ID'
@@ -28,22 +28,29 @@ variables:
 before_script:
   - docker login -u gitlab-ci-token -p $CI_JOB_TOKEN $CI_REGISTRY
 
-Ubuntu1604:
+.Ubuntu1604:
   variables:
-    distro: ubuntu1604
+    distro: ubuntul1604
     playbook: test.yml
 
   <<: *testing_script
 
 
-CentOs7:
+Centos7:
   variables:
     distro: centos7
     playbook: test.yml
 
   <<: *testing_script
 
-Ubuntu1404:
+Centos6:
+  variables:
+    distro: centos6
+    playbook: test.yml
+
+  <<: *testing_script
+
+.Ubuntu1404:
   variables:
     distro: ubuntu1404
     playbook: test.yml
@@ -57,17 +64,17 @@ Ubuntu1404:
 
   <<: *testing_script
 
-CentOs7_GitlabVersion:
+Centos7_GitlabVersion:
   variables:
     distro: centos7
     playbook: test-version.yml
 
   <<: *testing_script
 
-Ubuntu1604_GitlabVersion:
+.Ubuntu1604_GitlabVersion:
   variables:
     distro: ubuntu1604
     playbook: test-version.yml
 
   <<: *testing_script
-  
+
