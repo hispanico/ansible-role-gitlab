@@ -73,7 +73,7 @@ Centos7_GitlabVersion:
 
 Ubuntu1604_GitlabVersion:
   variables:
-    distro: 'ubuntu16.04'
+    distro: 'ubuntu:16.04'
     playbook: test-version.yml
 
   <<: *testing_script
