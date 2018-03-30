@@ -28,9 +28,9 @@ variables:
 before_script:
   - echo "$CI_JOB_TOKEN" | docker login -u gitlab-ci-token $CI_REGISTRY --password-stdin
 
-.Ubuntu1604:
+Ubuntu1604:
   variables:
-    distro: ubuntul1604
+    distro: 'ubuntu:16.04'
     playbook: test.yml
 
   <<: *testing_script
@@ -50,9 +50,9 @@ Centos6:
 
   <<: *testing_script
 
-.Ubuntu1404:
+Ubuntu1404:
   variables:
-    distro: ubuntu1404
+    distro: 'ubuntu:14.04'
     playbook: test.yml
 
   <<: *testing_script
@@ -71,9 +71,9 @@ Centos7_GitlabVersion:
 
   <<: *testing_script
 
-.Ubuntu1604_GitlabVersion:
+Ubuntu1604_GitlabVersion:
   variables:
-    distro: ubuntu1604
+    distro: 'ubuntu16.04'
     playbook: test-version.yml
 
   <<: *testing_script
